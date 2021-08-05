@@ -56,15 +56,17 @@ function checkUserInputRecursively(userGuess) {
 
 printMessage('Добро пожаловать в игру "Угадай число"!');
 
+
 // Основная функция - загадывает число от 0 - 100 и фиксирует количество попыток.
 // Вызывает askRecursively
 function guessNumber() {
-  let number = generateNumber();
-  let counter = 10;
+  let number = generateNumber(); // загаданное число
+  let counter = 10; // попытки
 
   // Рекурсивно запрашивает ввод и проверяет его.
   // В случае 'cancel' завершается.
   function askRecursively() {
+    // Если попыток не осталось
     if (counter === 0) {
       // Хочет ли пользователь продолжить?
       if (askConfirm("Попытки закончились.")) {
