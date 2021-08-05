@@ -2,7 +2,6 @@
 
 // Старался сделать функции изолированными и чистыми.
 
-
 // Загадываем число
 function generateNumber() {
   return Math.ceil(Math.random() * 100);
@@ -78,7 +77,6 @@ function guessNumber() {
         return;
       }
     }
-
 
     // Принимаем ввод пользователя
     let userGuess = askUserInput();
