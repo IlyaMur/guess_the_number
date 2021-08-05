@@ -9,7 +9,6 @@ alert('Добро пожаловать в игру "Угадай число"!');
 function guessNumber() {
   let number = Math.ceil(Math.random() * 100);
 
-
   function askRecursively() {
     let guess = prompt('Угадай число от 1 до 100:');
 
