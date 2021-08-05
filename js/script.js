@@ -54,8 +54,8 @@ function checkUserInputRecursively(userGuess) {
   checkUserInputRecursively(userGuess);
 }
 
-printMessage('Добро пожаловать в игру "Угадай число"!');
 
+printMessage('Добро пожаловать в игру "Угадай число"!');
 
 // Основная функция - загадывает число от 0 - 100 и фиксирует количество попыток.
 // Вызывает askRecursively
