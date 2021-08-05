@@ -38,6 +38,7 @@ function guessNumber() {
 
     askRecursively();
   }
+
   askRecursively();
 }
 
