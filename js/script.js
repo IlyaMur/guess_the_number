@@ -49,9 +49,9 @@ function checkUserInputRecursively(userGuess) {
   }
 
   printMessage('Введи число!');
-  userGuess = askUserInput();
+  let userInput = askUserInput();
 
-  checkUserInputRecursively(userGuess);
+  return checkUserInputRecursively(userInput);
 }
 
 
@@ -62,6 +62,8 @@ printMessage('Добро пожаловать в игру "Угадай числ
 function guessNumber() {
   let number = generateNumber(); // загаданное число
   let counter = 10; // попытки
+  let userGuess;
+  let checkedInput;
 
   // Рекурсивно запрашивает ввод и проверяет его.
   // В случае 'cancel' завершается.
@@ -85,16 +87,16 @@ function guessNumber() {
     counter--;
 
     // Проверяем ввод, в случае возвращённого undefined (нажатие 'cancel') завершаем игру
-    userGuess = checkUserInputRecursively(userGuess);
-    if (!userGuess) {
+    let checkedInput = checkUserInputRecursively(userGuess);
+    if (!checkedInput) {
       // фиксируется нажатие 'cancel', выходим из рекурсии
       resultMessage(number);
       return;
     }
 
-    if (userGuess < number) {
+    if (checkedInput < number) {
       printMessage(`Не угадал. Загаданное число больше. Осталось: ${counter}`);
-    } else if (userGuess > number) {
+    } else if (checkedInput > number) {
       printMessage(`Не угадал. Загаданное число меньше. Осталось: ${counter}`);
     } else {
       // В случае победы печатаем сообщение и спрашиваем пользователя о продолжении.
